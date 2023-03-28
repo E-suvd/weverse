@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>weverse</title>
+    <style>
+        .root {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .layout_container {
+            min-width: 1440px;
+        }
+
+        .header {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 3000;
+        }
+        .header2 {
+            display: block;
+        }
+
+        .headerView_content {
+            align-items: stretch;
+            display: flex;
+            height: 80px;
+        }
+
+        .HeaderView_service {
+            align-items: center;
+            display: flex;
+            flex-shrink: 0;
+            padding-left: 50px;
+        }
+
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        .HeaderView_logo {
+            display: block;
+        }
+
+        .blind {
+            clip: rect(0 0 0 0 );
+            height: 1px;
+            left: 0;
+            margin: -1px;
+            position: absolute;
+            top: 0;
+            user-select: none;
+            width: 1px;
+        }
+
+        .Header_community, .view_select {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            margin-left: 15px;
+            position: relative;
+        }
+
+        h2 {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        button, .profile_button, .setting_button {
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+            border: 0;
+            vertical-align: top;
+        }
+
+        .Header_community, .header_layer {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: none;
+            left: 0;
+            position: absolute;
+            top: 74px;
+            width: 300px;
+        }
+
+        .view_link {
+            color: #00c0b5;
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 18px;
+            padding: 21px 0 26px;
+            text-align: center;
+
+        }
+        
+        a {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .HeaderView_action {
+            align-items: center;
+            display: flex;
+            flex: 1 0 auto;
+            justify-content: flex-end;
+            padding: 0 39px 0 12px;
+        }
+
+        .Header_search {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            position: relative;
+        }
+
+        .Header_search, .search_button {
+            background-color: #c8cbcd;
+            border-radius: 50%;
+            bottom: 0;
+            margin: auto 0;
+            position: absolute;
+            right: 14px;
+            top: 0;
+            width: 18px;
+        }
+
+        .Header_search, .header_search_layer {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: none;
+            left: 0;
+            position: absolute;
+            top: 74px;
+            width: 100%;
+        }
+
+        .Header_search, .no_search {
+            height: 150px;
+        }
+
+        .epmty {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .empty_text {
+            color: #c8c8c8;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        .Header_notification {
+            align-items: center;
+            align-self: stretch;
+            display: flex;
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .Header_notification, .notification_button {
+            position: relative;
+        }
+
+        .Header_notification, .notification_header_layer {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: none;
+            position: absolute;
+            right: -10px;
+            top: 74px;
+            width: 470px;
+        }
+
+        .Header_profile {
+            margin-left: 30px;
+        }
+
+        .Header_profile, .profile_button:before {
+            background: no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANYSURBVHgB7ZuBddMwEIY/WIAwAWKCZAP8WIBu0GwQNog3oBOQMgEwAWWCtguQdILSBSi+Z/s5keXGsWVbdu5773+u09iRL3fS6aSAoiiKoiiKoiiKopzGK8IgSnSRaJ7IZBL+JrpLdJ/oR6Ibzpwo0a9EzzW1TXTJGTLjNEPZkmsNZ4Ih9ZTnltpyBkYzVBtLvGbJoREWpH3bdcU1j0zcaC5j1Q0vec933J42Y4KsKT/sFacTO+7zhYlhKD/khuZcOe5nmBDX+A2jGeXwbuKtwWI/3CXtiSgPAJNARjo7fHx10o/WfRd0zGu6x1jnN6RTHh/8tM4nabB7/LE78lne6cNgdvj58q5B6MNgtoFGnWQOYbA5/pgf+axRYigP/768zE5XIiaCPfx/pj1LJpqHCTH+J8y2d22YEGIcnxPmNROfSwox5YdcczouY03Ku3JcE2aR1LhMzeur6mF1rh8lhuqKq3hJxGHfNstek0rEI2dYcRUMfmr6YqzO546hYNBVo0YsOc3bxKt85HCjJyKtyt5SNpAY9IoJZfGKUs2Qm1EkZTCkI92bRO+zIxxuRhE9UWxM2WXHQejTYGKgfCX7A+1TAjHab9KSt2gSpR0hIk0DXImnT21Iv4xRIt60pnsjubSlwy1RXYTkinSiXad8syMNrQfSB33ae53sHnlfJ8c5RWjXuXec6BuBYjievec5lYRO25XvfFfPlhHOCqTxVeEnr3edeEZUb4nK2xBM/7amupEx/a4SGdx1t1xrBmZFmGFgqPa4SwbC4G5QSJPjGLfnD1IW2joaExEeS9wR0CsXhO1ZNksG/nLt2vqG8Bm0zXbdKiJ8Iso54ck0zfSfPd2nb1q3u+lmlDHuyDF4oKnBdtb5mvBZWue39EhMgFl0BRJ2MQMnsBKCrrnjlnB+bSZtlFRHci67nX8YYCYS8fJkVxq6orya3RX5KvmKlwuW/2iR6bcd3SLSfMbUeG9ek5fjQ3aUh3ra+39Vmdns/S11/7ekBpK/FxQ1s2PI531kwDUBwfByaSUEiVd9JbDR3FCvoNeXgUTSV8V47K+6SjgXmT5RLKV1jRjqjuI34vKjhx2e6TNDNxS1+Xcc9kNQ1O9d7Pdv+Rpl3v/t9qQoiqIoiqIoitKA/0LaUAWUB5/zAAAAAElFTkSuQmCC) 0 0/contain;
+            content: "";
+            display: block;
+            height: 38px;
+            width: 38px;
+        }
+
+        .Header_setting {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .Header_setting, .setting_button:before {
+            background: no-repeat urlno-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARjSURBVHgB7ZvhVdswEMf/7ev3phNwnYBsgDYoGyQbkA3iDQgTJJ0AOkHSCSgTxEwAnYBaJH41Z8nWnUzsEP3euwf30Mny6XSShQQkEolEIpFIJBKJRCIh4xP6Z1SIKeSskG/7n1UeC3kq5KGQP4U84wQxhSwK2RbyIpT7Qpb7Oj40NpLm2EXLS0diHX5VCOED8R6Ocsk1PoDjbO9rHLWNsJvgCLFRdQv/i62xy2HcKfaFTaWeS7jzXLavw1f/EkcUbQR/MrcvafblVqg7iwLru93/beyop62+QWFfwDWUeOSMHWWooV7jKG/Y37ee544xUHzOskNvxMry4bpsr/61Hh6tnMzx/CcM0GmEeg/bhk49ZTVDZ4R6h7gcMYPbaYSBQHA7y9erK8ijqyRDPfm7cEW7beMIA2CFeo82DQHuXEI4hHrH+HA57RY9M0XdWbOG8gbteaiNNfzJP6R9E/QEoR4tWYsNT9yaxs8in2mjrpeheY16jmiDR4dm9iLIonQEecd2DqF5XeRD6mAfPDe1RYxBz1HGh8UywMYwmzvoWUEeqTy6MxwQHuIhDeZOnkGPpi6DepSJ+Qw5Bm+XAhvsdkLbIKaH2PjIW+p2sdlLSbnTK0LjsCnTVwjjnOk59HBnE8L4xfRLHAC7RaxZeHK7WDQTyEhpp4Y/8F5gW53ZumhoNY9K8hHvONFsKR2SPLn/RjjVhuWI59lTdxu8zRcQEOuwHGEQuidXPiNn+ncIkDqM96R2pssRz1/oyJkuGpJfIIOYbr/+Nf9YtbOTQRz8RdfQcSYpLHUYZwTdJ4bWrgnCAdCsw06a2AjLBWWp8vsz4s9I8CjNw8zeJbq9ZHi7hvkRaEeQf6y3sYJuAW0Q8REuHZI8KkRTcoVviEeUrCvwpZEo0qUOy5lOCIM36iu6Jw8sR0yP2QRo5eQ/jTRslQ/kdrFoOo6g7/BXNMsKvkUyRRjaLRkXxPTQPGSYLh6OGofdMT10pnxk+jn0ENMfEMaE6T8hROOwDd72qEHYZ07OdO0Ma9FsAlgbw2w2EKJd6d8wfd5uUmtcTIRdMD1kaM2YfoMD4joYYgJsutrtlE4gBvV/CxIOTIa6A9pmzDXiG83PloXsUnAHL9ADrii7brHJEP+vtilkLz9HvWMJPeE6izVpKG8gjw4Oj1LTUPYKsvYdBH6asO3EH49KQjiE8DzoOha6xABwHfZocloG/W7BCmEO8B2oIwwEgvt8qytH8Z4PPRhCCDuMN8HAnVXiOxQ8d5RdQzZZWFbMhn9xjFA/ghWSInrFNoxHQdnDplLOOMqYhnrJUX7M6nM9d9DOKiH4LzYs8f8F+GThGzau+srcZeC/ETLIYeiD4L+hUS4nMrhfsvoxb+CeUBZovjpjO+Ng+/ZdMoXuTuRThN0ERw6hfjC3a7GOynCkUeWDsFtmaCLnpBzlwmCX4/j+eohYhy/Q0xXmoVyStzOn3R9ruiRvf25wopfkE4lEIpFIJBKJxHvyDzV0CFi0qQzOAAAAAElFTkSuQmCC) 0 0/contain;
+            content: "";
+            display: block;
+            height: 38px;
+            width: 38px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="App">
+            <div class="layout_container">
+                <div class="header">
+                    <header class="header2">
+                        <div class="HeaderView_content">
+                            <div class="HeaderView_service">
+                                <h1 class="logo">
+                                    <a class="HeaderView_logo">
+                                        :: before
+                                        <span class="blind">weverse</span>
+                                    </a>
+                                </h1>
+                                <div class="Header_community" aria-expanded="false">
+                                    <h2 class="select">
+                                        <button type="button" class="view_select" aria-haspopup="listbox">
+                                            <span class="view_name">BTS</span>
+                                            :: after
+                                        </button>
+                                    </h2>
+                                    <div class="header_layer">
+                                        <a href="https://weverse.io/" class="view_link">Looking for new artists?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HeaderView_action">
+                                <div class="Header_search" aria-expanded="false">
+                                    <div class="header_search_box" aria-expanded="false" role="combobox" aria-haspopup="true">
+                                        <label for="search_input"  class="view_search">
+                                            ::before
+                                            <span class="blind">search</span>
+                                        </label>
+                                        <input type="text" id="search_input" class="search_input" autocomplete="off" placeholder="Search Artist" value>
+                                        <button type="button" class="search_button">
+                                            <span class="blind">Clear search word</span>
+                                        </button>
+                                    </div>
+                                    <div class="header_search_layer">
+                                        <div class="no_search">
+                                            <div class="empty">
+                                                <span class="empty_text">No search result available.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="Header_notification" aria-expanded="false">
+                                    <button class="notification_button">
+                                        ::before
+                                        <span class="blind">notification</span>
+                                        <span class="blind">new</span>
+                                    </button>
+                                    <div class="notification_header_layer"></div>
+                                </div>
+                                <div class="Header_profile">
+                                    <button class="profile_button">
+                                        ::before
+                                        <span class="blind">global more</span>
+                                    </button>
+                                </div>
+                                <div class="Header_setting">
+                                    <button class="setting_button">
+                                        ::before
+                                        <span class="blind">global setting</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

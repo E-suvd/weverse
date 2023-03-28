@@ -1,0 +1,242 @@
+.header {
+    height: 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: whitesmoke;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(250, 245, 245);
+}
+
+.search::placeholder {
+    font-family: Arial;
+    font-size: 16px;
+    color: rgb(193, 196, 197);
+  }
+
+.logo {
+    width: 430px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo1 {
+    height: 20px;
+    width: 126px;
+    padding: 50px;
+}
+
+.logo2 {
+    height: 12px;
+    width: 12px;
+    margin: 45px;
+}
+
+.hereglegch {
+    width: 1550px;
+}
+
+.hailt {
+    width: 49px;
+    height: 45px;
+    border-radius: 40px 0px 0px 40px;
+    margin-top: 20px;
+    margin-left: 50%;
+    background-color: rgb(250, 245, 245);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(250, 245, 245);
+}
+
+.hailt2 {
+    height: 28px;
+    padding-left: 5px;
+    padding-top: 2px;
+}
+
+.hailt3 {
+    width: 38px;
+    width: 38px;
+    margin-left: 85%;
+    margin-top: -43px;
+    display: flex;
+}
+
+.hailt4 {
+    width: 38px;
+    width: 38px;
+    margin-left: 90%;
+    margin-top: -39px;
+    display: flex;
+}
+
+.hailt5 {
+    width: 38px;
+    width: 38px;
+    margin-left: 95%;
+    margin-top: -39px;
+    display: flex;
+}
+
+.button {
+    height: 38px;
+    width: 38px;
+    margin-top: 23px;   
+ 
+    margin-left: -1px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search {
+    flex: 1;
+    height: 41px;
+    width: 415px;
+    margin-left: 53.07%;
+    display: flex;
+    margin-top: -45px;
+    padding-left: 10px;
+    font-size: 16px;
+    background-color: rgb(250, 245, 245);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(250, 245, 245);
+    border-radius: 0px 40px 40px 0px;
+    box-shadow: inset 1px, 2px, 3px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.ner {
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 29px;
+    margin: -35px;
+}
+
+.gol_heseg {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding: 10px 0;
+    position: relative;
+    margin-top: 81px;
+}
+
+.font {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 10px;
+    margin-right: 50px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 16px;
+    color: hsla(0,0%,100%,.5);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.gol_heseg2 {
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -55px;
+    padding-bottom: 36px;
+    position: relative;
+    height: 100px;
+    background-image: linear-gradient(90deg, rgb(192, 236, 255) 0%, rgb(178, 209, 255) 100%);
+}
+
+.story {
+    height: 125px;
+    width: 353px;
+    margin-left: 20px;
+    display: flex;
+    margin-top: -35px;
+    border-radius: 20px;
+    background-color: #ffff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffff;
+}
+
+.story1 {
+    height: 125px;
+    width: 353px;
+    margin-left: 20px;
+}
+
+.story2 {
+    height: 125px;
+    width: 353px;
+    margin-left: 20px;
+}
+
+.zurag {
+    height: 48px;
+    width: 48px;
+    border-radius: 40px;
+    margin-top: -25px;
+    margin-left: 15px;
+}
+
+.zurag_ner {
+    font-size: 22px;
+    font-weight: 450;
+    line-height: 29px;
+    margin-top: 30px;
+    margin-left: -40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font: bold;
+}
+
+.zurag_ner1 {
+    font-size: 20px;
+    font-weight: 450;
+    line-height: 29px;
+    margin-top: 30px;
+    margin-left: -42px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font: bold;
+}
+
+.zurag1 {
+    height: 14px;
+    width: 14px;
+    margin-top: 38px;
+    margin-left: 3px;
+}
+
+.zurag_comment {
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 29px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font: bold;
+    margin-top: 60px;
+    margin-left: -55px;
+}
+
+.zurag_comment1 {
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 29px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font: bold;
+    margin-top: 60px;
+    margin-left: -40px;
+}
+
